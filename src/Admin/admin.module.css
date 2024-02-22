@@ -1,0 +1,68 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 4rem;
+}
+  
+.horizontal{
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 0 0 2px rgba(83, 83, 230, 0.2);
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.chartscontainer{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.barcontainer{
+    
+    padding: 1rem 1.5rem;
+    width: 770px;
+    height: 530px;
+    border: 1px solid rgb(224, 224, 247);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.pie{
+    margin: 1rem;
+    width: 27rem;
+    height: 16rem;
+    padding: 1rem;
+    border: 1px solid rgb(224, 224, 247);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+}
+.income{
+    margin: 2rem;
+    padding: 1.5rem 1.5rem;
+    width: 370px;
+    height: 260px;
+    border: 1px solid rgb(224, 224, 247);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.patientstab{
+    margin-left: 2rem;
+    padding: 1rem 1rem;
+    width: 770px;
+    height: 420px;
+    border: 1px solid rgb(224, 224, 247);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.doctorstab{
+    
+    padding: 1rem 1rem;
+    width: 420px;
+    height: 570px;
+    border: 1px solid rgb(224, 224, 247);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

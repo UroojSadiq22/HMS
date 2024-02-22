@@ -45,3 +45,33 @@
 .button{
     margin-right: 3rem;
 }
+
+@media screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      height: auto;
+      padding: 2rem;
+    }
+  
+    .logo {
+      width: 15rem;
+      height: auto;
+      margin-bottom: 2rem;
+    }
+  
+    .navbar ul {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+  
+    .navbar ul li {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    .button {
+      margin-right: 0;
+      margin-top: 2rem;
+    }
+  }

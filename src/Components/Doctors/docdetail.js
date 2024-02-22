@@ -80,7 +80,7 @@ const Docdetail = () => {
   <motion.div className={StyleDocDetail.card}
 
   initial={{y: -100}}
-  animate={{y: [400,0]}}
+  animate={{y: [100,0]}}
   transition={{duration:'1'}}
   whileInView="visible" 
   whileHover={{ scale: 1.1 }}>

@@ -138,9 +138,6 @@ const Signin = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    // Perform any authentication logic here
-    // For simplicity, let's assume authentication is successful
-    // Update the state to indicate that the user has signed in
     setSignedIn(true);
   };
 

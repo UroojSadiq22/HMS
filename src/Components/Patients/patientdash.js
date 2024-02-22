@@ -72,6 +72,7 @@ const Patientdash = () => {
 <div className={StyleDash.healthdata}>
   <h2>Health Statistics</h2>
   <div className={StyleDash.data}>
+    
   <div className={StyleDash.pie}>
     <div style={{ display: 'flex' , justifyContent: 'space-between' }}>
       
