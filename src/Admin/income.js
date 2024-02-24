@@ -26,8 +26,9 @@ const xdayLabels = [
 export default function Income() {
   return (
     <>
-    <div style={{display: 'flex' , flexDirection: 'row' , marginLeft: '2px'}}>
-    <div className={Styleadmin.income}>
+    <div style={{display: 'flex' , flexDirection: 'row'}}>
+      <div className={Styleadmin.income}>
+      <div className={Styleadmin.incomeM}>
         <h2>$2734</h2>
         <label>average income/month</label>
     <LineChart
@@ -39,7 +40,7 @@ export default function Income() {
     />
     
     </div>
-    <div className={Styleadmin.income}>
+    <div className={Styleadmin.incomeW}>
     <h2>$1237</h2>
         <label>average income/week</label>
     <LineChart
@@ -50,6 +51,9 @@ export default function Income() {
     />
 
     </div>
+
+      </div>
+    
 
     </div>
     

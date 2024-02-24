@@ -2,7 +2,7 @@ import './App.css';
 import Content from './Components/Doctors/content';
 import { Route, Routes } from 'react-router-dom';
 import Admin from './Admin'
-
+import { useState } from 'react';
 import Docdetail from './Components/Doctors/docdetail'
 import Navbar from './Components/Navbar'
 import About from './Components/About'
@@ -15,14 +15,19 @@ import Signin from './Components/Patients/signin';
 import Footer from './Components/Footer';
 
 function App() {
+  const [patients, setPatients] = useState([]); // State to hold patient data
+
+  const handleAppointmentBooking = (newPatient) => {
+    setPatients([...patients, newPatient]); // Update patient data
+  };
   return (
     <>
     
     <Navbar/>
   
     <Routes>
-    <Route path='/admin' element={<Admin/>}/>
-      <Route path='/' element={<Home/>}/>
+    <Route path='/admin' element={<Admin patients={patients} />}/>
+      <Route path='/' element={<Home onAppointmentBook={handleAppointmentBooking}/>}/>
       <Route path="/about" element={<About />} /> 
       <Route path="/departments" element={<Departments />} />
    

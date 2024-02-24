@@ -16,9 +16,14 @@ import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import TopDiv1 from './top_div1'
 import TreatDiv2 from './treat_div2'
 import MissionDiv3 from './mission_div3'
+import { Link } from 'react-router-dom'
 
 
-const Home = () => {
+const Home = ({onAppointmentBook}) => {
+  const handleAppointmentBook = (newPatient) => {
+    // Pass newly booked patient to parent component
+    onAppointmentBook(newPatient);
+  };
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -93,7 +98,7 @@ const Home = () => {
     </div>
     </div>
 
-  <TopDiv1/>
+  <TopDiv1 onAppointmentBook={handleAppointmentBook}/>
   
   <TreatDiv2/>
 
@@ -103,9 +108,13 @@ const Home = () => {
     <h1>Have Questions? Get In Touch!</h1>
     <h3>To Find Best Doctors</h3>
     <p>Great doctor if you need your family member to get immediate assistance, emergency treatment or a simple consultation.</p>
+    
+    <Link to='./contact'>
     <Button variant="contained" endIcon={<LocalPhoneIcon />}>
       Contact Us
     </Button>
+    </Link>
+    
   </div>
 
   <div>

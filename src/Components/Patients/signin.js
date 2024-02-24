@@ -122,6 +122,7 @@ import { motion } from 'framer-motion';
 import StyleSignin from './signin.module.css';
 import SigninImg from '../../Ui/signin.jpg';
 import PatientDash from './patientdash';
+import { TextField }from '@mui/material';
 
 const Signin = () => {
   const [patientData, setPatientData] = useState({
@@ -170,7 +171,7 @@ const Signin = () => {
                     id="name"
                     value={patientData.name}
                     onChange={InputHandler}
-                    
+                    required
                   />
                 </motion.div>
                 <motion.div
@@ -187,7 +188,7 @@ const Signin = () => {
                     id="patientid"
                     value={patientData.patientid}
                     onChange={InputHandler}
-                    
+                    required
                   />
                 </motion.div>
                 <motion.div
@@ -204,8 +205,9 @@ const Signin = () => {
                     id="password"
                     value={patientData.password}
                     onChange={InputHandler}
-                    
+                    required
                   />
+                  
                 </motion.div>
                 <motion.div
                   initial={{ x: 0 }}

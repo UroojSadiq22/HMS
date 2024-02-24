@@ -12,7 +12,7 @@ import Income from './income';
 import PatientsTable from './patientstable';
 import DoctorTable from './doctortable'
 
-const index = () => {
+const index = ({patients}) => {
     
   return (
     <>
@@ -55,12 +55,15 @@ const index = () => {
   <div>
   <Bar/>
 <Income/>
+<PatientsTable patients={patients}/>
   </div>
+  <div style={{display: 'flex' , flexDirection:'column'}}>
   <DoctorTable/>
-    
+  <Pie/>
+  </div>
 </div>
-<Pie/>
-<PatientsTable/>
+
+
 
 
     

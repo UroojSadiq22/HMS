@@ -41,7 +41,7 @@
     left: 0;
     position:absolute;
     right: 0;
-    color: black!important;
+    color: white!important;
 }
 .shape svg {
     transform: scale(2);

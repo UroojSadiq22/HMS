@@ -42,7 +42,7 @@ const Navbar = () => {
           <li className={StyleNav.NavbarMenuList}><Link to='/admin'>Admin</Link></li>
             <li className={StyleNav.NavbarMenuList}><Link to='/'>Home</Link></li>
             <li className={StyleNav.NavbarMenuList}><Link to='/about'>About Us</Link></li>
-            {/* <li className={StyleNav.NavbarMenuList}><Link to='/services'>Departments</Link></li> */}
+            <li className={StyleNav.NavbarMenuList}><Link to='/departments'>Departments</Link></li>
      {/* <li> */}
       {/* <Button
         id="fade-button"
@@ -70,7 +70,7 @@ const Navbar = () => {
         <MenuItem onClick={handleClose}>Logout</MenuItem>
       </Menu>
       </li>        */}
-      <li>
+      {/* <li>
             <div
               aria-controls="fade-menu"
               aria-haspopup="true"
@@ -93,7 +93,7 @@ const Navbar = () => {
                 <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
               </Menu>
             </div>
-          </li>
+          </li> */}
       
 
 

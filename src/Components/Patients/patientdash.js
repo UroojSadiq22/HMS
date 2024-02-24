@@ -11,9 +11,12 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import WaterDropIcon from '@mui/icons-material/WaterDrop';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import VaccinesIcon from '@mui/icons-material/Vaccines';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import { SparkLineChart } from '@mui/x-charts/SparkLineChart';
+import { BarChart } from '@mui/x-charts/BarChart';
+import { axisClasses } from '@mui/x-charts';
 
 function createData(name, value) {
   return { name, value};
@@ -31,6 +34,18 @@ const data = [
   { id: 2, value: 40, label: 'hydrated'  },
 ];
 
+const chartSetting = {
+ 
+  widt: 400,
+      height:200,
+  sx: {
+    [`.${axisClasses.left} .${axisClasses.label}`]: {
+      transform: 'translate(-20px, 0)',
+    },
+    
+  },
+};
+const valueFormatter = (value) => `${value}`;
 const Patientdash = () => {
   return (<>
   <h1 style={{color: 'blue', margin: '1rem 1.7rem'}}>Welcome Christopher Burrell!</h1>
@@ -95,8 +110,8 @@ const Patientdash = () => {
   <div className={StyleDash.linechart}>
   <div style={{ display: 'flex' , justifyContent: 'space-between' }}>
   <h3>Heart Beat</h3>
-  <div style={{ background: 'lightred', margin: '9px' , padding: '5px 10px', borderRadius: '10px' , height: '27px' , width: '70px'}}><p>79bpm</p></div>
-    <FavoriteIcon style={{margin: '9px 4px'}}/>
+  <div style={{ background: 'lightred' , padding: '5px 10px', borderRadius: '10px' , height: '27px' , width: '70px'}}><p>79bpm</p></div>
+    <FavoriteIcon />
   </div>
         
     <LineChart
@@ -106,7 +121,7 @@ const Patientdash = () => {
       data: [2, 5.5, 2, 8.5, 1.5, 5],
     },
   ]}
-  width={400}
+  width={390}
   height={200}
 />
   </div>
@@ -114,19 +129,86 @@ const Patientdash = () => {
   <div className={StyleDash.linechart}>
   <div style={{ display: 'flex' , justifyContent: 'space-between' }}>
   <h3>Haemoglobin</h3>
-  <div style={{ background: 'lightred', margin: '9px' , padding: '5px 10px', borderRadius: '10px' , height: '27px' , width: '70px'}}><p>79bpm</p></div>
-    <FavoriteIcon style={{margin: '9px 4px'}}/>
+  <div style={{ background: 'lightred' , padding: '5px 10px', borderRadius: '10px' , height: '27px' , width: '70px'}}><p>79bpm</p></div>
+    <VaccinesIcon/>
   </div>
-  <Stack direction="row" sx={{ width: '70%' }}>
+  <Stack direction="row" sx={{ width: '100%', height: '100%' }}>
       <Box sx={{ flexGrow: 1 }}>
         <SparkLineChart
-          data={[1, 4, 2, 5, 7, 2, 4, 6]} 
+          data={[12, 72, 19, 55, 37, 72, 42, 53]} 
           height={100}
           showTooltip
           showHighlight
         />
       </Box>
     </Stack>
+  </div>
+
+  {/* <div className={StyleDash.linechart}>
+  <div style={{ display: 'flex' , justifyContent: 'space-between' }}>
+  <h3>Nutrients Level</h3>
+  <div style={{ background: 'lightred' , padding: '5px 10px', borderRadius: '10px' , height: '27px' , width: '70px'}}><p>79bpm</p></div>
+    <VaccinesIcon/>
+  </div>
+  <BarChart
+      xAxis={[{ scaleType: 'band', data: ['Jan', 'Feb', 'march' , 'Apr' , 'May'] }]}
+      series={[{ data: [4, 3, 5 , 2 , 9] }, { data: [1, 6, 3 , 2 , 7] }, { data: [7, 5, 6 , 1 , 4] }]}
+      width={400}
+      height={200}
+    />
+  </div> */}
+  <div className={StyleDash.bargraph}>
+  <div style={{ display: 'flex' , justifyContent: 'space-between' }}>
+  <h3>Nutrients Level</h3>
+  <div style={{ background: 'lightred' , padding: '5px 10px', borderRadius: '10px' , height: '27px' , width: '70px'}}><p>79bpm</p></div>
+    <VaccinesIcon/>
+  </div>
+  <BarChart 
+      dataset={[
+        {
+          protiens: 59,
+          vitamins: 57,
+          carbohydrated: 86,
+          fats: 21,
+          month: 'Jan',
+        },
+        {
+          protiens: 50,
+          vitamins: 52,
+          carbohydrated: 78,
+          fats: 28,
+          month: 'Fev',
+        },
+        {
+          protiens: 47,
+          vitamins: 53,
+          carbohydrated: 106,
+          fats: 41,
+          month: 'Mar',
+        },
+        {
+          protiens: 54,
+          vitamins: 56,
+          carbohydrated: 92,
+          fats: 73,
+          month: 'Apr',
+        },
+        {
+          protiens: 57,
+          vitamins: 69,
+          carbohydrated: 92,
+          fats: 99,
+          month: 'May',
+        }]}
+      xAxis={[{ scaleType: 'band', dataKey: 'month' }]}
+      series={[
+        { dataKey: 'protiens', label: 'protiens', valueFormatter },
+        { dataKey: 'vitamins', label: 'vitamins', valueFormatter },
+        { dataKey: 'carbohydrated', label: 'carbohydrated', valueFormatter },
+        { dataKey: 'fats', label: 'fats', valueFormatter },
+      ]}
+      {...chartSetting}
+    />
   </div>
 
   </div>

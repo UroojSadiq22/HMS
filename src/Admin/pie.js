@@ -27,7 +27,7 @@ const depdata = [
 export default function PieActiveArc() {
   return (
     <>
-    <div style={{margin: '1rem'}}>
+    <div>
       
     <div className={Styleadmin.pie} >
     <h3>Age Group</h3>

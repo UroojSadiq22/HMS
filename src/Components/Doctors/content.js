@@ -62,7 +62,7 @@ const Content = () => {
       whileInView="visible" 
       whileHover={{ scale: 1.1 }}>
 
-<Card sx={{ maxWidth: 245 , margin: 6 }}>
+<Card sx={{ maxWidth: 300 , margin: 5 }}>
 
 <div className={Stylecontent.media}>
 <CardMedia
