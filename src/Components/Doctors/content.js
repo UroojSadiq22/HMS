@@ -33,7 +33,20 @@ const Content = () => {
       hidden: { scale: 0 },
     };
 
-  
+    const fadeInAnimationVariants = {
+      initial: {
+        opacity: 0 ,
+        y: 100 ,
+      },
+      animate: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          delay: 0.05,
+          duration: 2,
+        }
+      }
+    };
 
   return (
     <>
@@ -55,12 +68,10 @@ const Content = () => {
 <div className={Stylecontent.container} >
   {doctors.map((i)=>(  
     <motion.div className={Stylecontent.cards} 
-      variants={variant}
-      initial={{y: -100}}
-      animate={{y: [400,0]}}
-      transition={{duration:'1'}}
-      whileInView="visible" 
-      whileHover={{ scale: 1.1 }}>
+    variants={fadeInAnimationVariants}
+    initial= 'initial'
+    whileInView='animate'
+    viewport={{once: true}}>
 
 <Card sx={{ maxWidth: 300 , margin: 5 }}>
 

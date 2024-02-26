@@ -1,6 +1,6 @@
 .signincontainer {
     max-width: 70%;
-    height: 450px;
+    height: 500px;
     margin: 2rem auto;
     padding: 20px;
     background: #f4f4f4;
@@ -11,9 +11,9 @@
 }
 .formimg{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
-.signincontainer h2 {
+.signincontainer h1 {
   text-align: center;
   margin: 2rem;
   color: rgb(72, 72, 235);
@@ -47,7 +47,45 @@
   margin-top: 2rem;
 }
 .img{
-  border: 2px solid rgb(191, 191, 248);
-  border-radius: 2px;
-  box-shadow: 5rem;
+  height: fit-content;
+  border: 1px solid rgb(224, 224, 247);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 768px) {
+  .img{
+    width: 100%;
+    border: 1px solid rgb(224, 224, 247);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .formimg{
+    display: flex;
+    flex-direction: column;
+   gap: 5rem;
+  }
+  .signincontainer {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .formgroup label {
+    margin: 1rem 1rem;
+  }
+
+  .button {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .signincontainer {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .formgroup label {
+    margin: 1rem 0.5rem;
+  }
 }

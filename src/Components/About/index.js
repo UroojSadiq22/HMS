@@ -14,7 +14,7 @@ transition={{ repeat: 0 ,duration: 3, delay:0.2}}
 className={Styleabout.text}
 >
 <h1>About Us</h1>
-<h3>Great doctor if you need your family member to get effective immediate assistance, emergency treatment or a simple consultation.</h3>
+<h3>Welcome to Our Hospital: Discover Our Commitment to Care</h3>
 </motion.div>
 
 
@@ -58,12 +58,6 @@ className={Styleabout.text}
     </div>
       
       <div>
-        <div>
-        <h2>Our Team</h2>
-      <p>Meet the dedicated professionals who make our hospital great!</p>
-      {/* You can add team members' information here */}
-
-        </div>
       
       </div>
       <div>

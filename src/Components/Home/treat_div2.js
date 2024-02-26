@@ -46,11 +46,10 @@ const Treat_div1 = () => {
       viewport={{once: true}}
       >
         <h2>Hospital Treatment</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.
-          Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis
-          sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
-          Vestibulum lacinia arcu eget nulla.
+        <p>Our primary care physicians focus on preventive care, routine screenings, and management of common medical conditions. They serve as your first point of contact for general healthcare needs and coordinate specialized care when necessary.
+          Our advanced diagnostic imaging and laboratory services enable accurate and timely diagnosis of medical conditions. From X-rays and MRI scans to blood tests and biopsies, we utilize cutting-edge technology to provide comprehensive diagnostic evaluations. From elective surgeries to emergency interventions, we prioritize patient safety and optimal surgical outcomes.
+Emergency department is equipped to handle medical emergencies 24/7. The emergency team provide prompt assessment, stabilization, and treatment for patients with acute injuries and illnesses.
+We understand the importance of holistic care for patients with serious illnesses so we offer physical therapy, occupational therapy, and speech therapy services to support your recovery journey.
         </p>
       </motion.div>
     </div>

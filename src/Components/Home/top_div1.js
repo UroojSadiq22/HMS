@@ -36,7 +36,7 @@ const Top_div1 = ({onAppointmentBook}) => {
   };
   const handleSubmit = (e) =>{
     e.preventDefault();
-    onAppointmentBook(patientData);
+    // onAppointmentBook(patientData);
     handleClose();
   }
   const [open, setOpen] = useState(false);

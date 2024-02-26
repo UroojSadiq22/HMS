@@ -17,6 +17,7 @@ import Box from '@mui/material/Box';
 import { SparkLineChart } from '@mui/x-charts/SparkLineChart';
 import { BarChart } from '@mui/x-charts/BarChart';
 import { axisClasses } from '@mui/x-charts';
+import Patients from './patientsNav'
 
 function createData(name, value) {
   return { name, value};
@@ -36,8 +37,8 @@ const data = [
 
 const chartSetting = {
  
-  widt: 400,
-      height:200,
+  width: 800,
+      height:320,
   sx: {
     [`.${axisClasses.left} .${axisClasses.label}`]: {
       transform: 'translate(-20px, 0)',
@@ -48,9 +49,11 @@ const chartSetting = {
 const valueFormatter = (value) => `${value}`;
 const Patientdash = () => {
   return (<>
+  <Patients/>
   <h1 style={{color: 'blue', margin: '1rem 1.7rem'}}>Welcome Christopher Burrell!</h1>
     <div className={StyleDash.dashboardcontainer}>
-        <div className={StyleDash.intro}>
+      <div style={{display: 'flex' , flexDirection: 'column'}}>
+      <div className={StyleDash.intro}>
           <div className={StyleDash.imgtitle}>
             <img src={PatientImg} alt='patient'></img>
             <div style={{margin: '2rem 1rem'}}>
@@ -83,12 +86,35 @@ const Patientdash = () => {
     </TableContainer>
   </div>
 </div>
+
+<div className={StyleDash.heamolinechart}>
+  <div style={{ display: 'flex' , justifyContent: 'space-between' }}>
+  <h3>Haemoglobin</h3>
+  <div style={{ background: 'lightred' , padding: '5px 10px', borderRadius: '10px' , height: '27px' , width: '70px'}}><p>79bpm</p></div>
+    <VaccinesIcon/>
+  </div>
+  <Stack direction="row" sx={{ width: '100%', height: '100%' }}>
+      <Box sx={{ flexGrow: 1 }}>
+        <SparkLineChart
+          data={[12, 72, 19, 55, 37, 72, 42, 53]} 
+          height={100}
+          showTooltip
+          showHighlight
+        />
+      </Box>
+    </Stack>
+  </div>
+
+      </div>
+        
       
+
 <div className={StyleDash.healthdata}>
   <h2>Health Statistics</h2>
   <div className={StyleDash.data}>
-    
-  <div className={StyleDash.pie}>
+    <div style={{display: 'flex' , flexDirection: 'row' , gap: '2rem'}}>
+
+    <div className={StyleDash.pie}>
     <div style={{ display: 'flex' , justifyContent: 'space-between' }}>
       
     <h3>Water Level</h3>
@@ -126,23 +152,10 @@ const Patientdash = () => {
 />
   </div>
 
-  <div className={StyleDash.linechart}>
-  <div style={{ display: 'flex' , justifyContent: 'space-between' }}>
-  <h3>Haemoglobin</h3>
-  <div style={{ background: 'lightred' , padding: '5px 10px', borderRadius: '10px' , height: '27px' , width: '70px'}}><p>79bpm</p></div>
-    <VaccinesIcon/>
-  </div>
-  <Stack direction="row" sx={{ width: '100%', height: '100%' }}>
-      <Box sx={{ flexGrow: 1 }}>
-        <SparkLineChart
-          data={[12, 72, 19, 55, 37, 72, 42, 53]} 
-          height={100}
-          showTooltip
-          showHighlight
-        />
-      </Box>
-    </Stack>
-  </div>
+    </div>
+  
+
+ 
 
   {/* <div className={StyleDash.linechart}>
   <div style={{ display: 'flex' , justifyContent: 'space-between' }}>
@@ -202,14 +215,16 @@ const Patientdash = () => {
         }]}
       xAxis={[{ scaleType: 'band', dataKey: 'month' }]}
       series={[
-        { dataKey: 'protiens', label: 'protiens', valueFormatter },
-        { dataKey: 'vitamins', label: 'vitamins', valueFormatter },
-        { dataKey: 'carbohydrated', label: 'carbohydrated', valueFormatter },
-        { dataKey: 'fats', label: 'fats', valueFormatter },
+        { dataKey: 'protiens', label: 'protiens', valueFormatter , color: 'grey' },
+        { dataKey: 'vitamins', label: 'vitamins', valueFormatter , color: 'lightgreen'},
+        { dataKey: 'carbohydrated', label: 'carbohydrated', valueFormatter , color: 'lightblue'},
+        { dataKey: 'fats', label: 'fats', valueFormatter , color: 'lightpink' },
       ]}
       {...chartSetting}
     />
   </div>
+
+  
 
   </div>
   

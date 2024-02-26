@@ -1,121 +1,3 @@
-// import React  from 'react'
-// import StyleSignin from './signin.module.css'
-// import { Button } from '@mui/material'
-// import {motion} from 'framer-motion'
-// import SigninImg from '../../Ui/signin.jpg'
-// import { useState } from 'react'
-// import { Route, Routes } from 'react-router-dom'
-// import PatientDash from './patientdash'
-
-
-// const Signin = () => {
-//   const [patientData , setPatientData] = useState({
-//     name: '',
-//     patientid: '',
-//     password: ''
-//   })
-  
-//   const InputHandler = (e) =>{
-//     setPatientData({...patientData, [e.target.name]: e.target.value})
-  
-//   }  
-//   const submitHandler = (e)=>{
-//     e.preventDefault();
-    
-//   }
-
-
-//   return (
-//     <>
-//     <div className={StyleSignin.signincontainer}>
-//     <motion.h2 
-//       initial={{y: -100}}
-//       animate={{y: [50,0]}}
-//       transition={{duration:'1'}}
-//       whileInView="visible" >
-//         Patient Sign In</motion.h2>
-//   <div className={StyleSignin.formimg}>
-//   <div>
-//       <form className={StyleSignin.form} onSubmit={submitHandler} >
-//         <motion.div
-//         initial={{y: -100}}
-//         animate={{y: [50,0]}}
-//         transition={{duration:'1'}}
-//         whileInView="visible"
-//         className={StyleSignin.formgroup}>
-//           <label htmlFor="username">Patient Name</label>
-//           <input
-//             name='name'
-//             type="text"
-//             id="name"
-//             value={patientData.name}
-//             onChange={InputHandler}
-//           />
-//         </motion.div>
-//         <motion.div
-//         initial={{y: -100}}
-//         animate={{y: [50,0]}}
-//         transition={{duration:'1'}}
-//         whileInView="visible"
-//         className={StyleSignin.formgroup}>
-//           <label htmlFor="username">Patient ID</label>
-//           <input
-//             name='patientid'
-//             type='text'
-//             id="patientid"
-//             value={patientData.patientid}
-//             onChange={InputHandler}
-           
-//           />
-//         </motion.div>
-//         <motion.div 
-//         initial={{y: -100}}
-//         animate={{y: [50,0]}}
-//         transition={{duration:'1'}}
-//         whileInView="visible"
-//         className={StyleSignin.formgroup}>
-//           <label htmlFor="password">Password</label>
-//           <input
-//             name='password'
-//             type="password"
-//             id="password"
-//             value={patientData.password}
-//             onChange={InputHandler}
-          
-//           />
-//         </motion.div>
-//         <motion.div 
-//         initial={{x: 0}}
-//         animate={{x: [0,100]}}
-//         transition={{duration:'1'}}
-//         whileInView="visible"
-//         className={StyleSignin.button}>
-//         <Button variant="contained" type="submit">
-//                   Sign in
-//                 </Button>
-//         </motion.div>
-        
-//       </form>
-
-//       </div>
-//       <div className={StyleSignin.img}>
-//       <img src={SigninImg} alt='signinimg' style={{height:'17rem', width: '20rem'}}></img>
-//     </div>
-
-
-//   </div>
-      
-      
-      
-//     </div>
-    
-//     </>
-    
-//   )
-// }
-
-// export default Signin
-
 import React, { useState } from 'react';
 import { Button } from '@mui/material';
 import { motion } from 'framer-motion';
@@ -123,11 +5,14 @@ import StyleSignin from './signin.module.css';
 import SigninImg from '../../Ui/signin.jpg';
 import PatientDash from './patientdash';
 import { TextField }from '@mui/material';
+import { Link } from 'react-router-dom';
+
 
 const Signin = () => {
   const [patientData, setPatientData] = useState({
     name: '',
     patientid: '',
+    email: '',
     password: ''
   });
 
@@ -140,24 +25,26 @@ const Signin = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     setSignedIn(true);
+
   };
 
   return (
     <>
       {!signedIn ? (
         <div className={StyleSignin.signincontainer}>
-          <motion.h2
-            initial={{ y: -100 }}
-            animate={{ y: [50, 0] }}
+          
+          <div className={StyleSignin.formimg}>
+            <div>
+            <motion.h1
+            initial={{ x: -100 }}
+            animate={{ x: [70, 0] }}
             transition={{ duration: '1' }}
             whileInView="visible"
           >
             Patient Sign In
-          </motion.h2>
-          <div className={StyleSignin.formimg}>
-            <div>
+          </motion.h1>
               <form className={StyleSignin.form} onSubmit={submitHandler}>
-                <motion.div
+                {/* <motion.div
                   initial={{ y: -100 }}
                   animate={{ y: [50, 0] }}
                   transition={{ duration: '1' }}
@@ -171,10 +58,26 @@ const Signin = () => {
                     id="name"
                     value={patientData.name}
                     onChange={InputHandler}
-                    required
+                 
                   />
-                </motion.div>
-                <motion.div
+
+                  
+                </motion.div> */}
+
+                <TextField
+            autoFocus
+            required
+            margin="dense"
+            id="name"
+            name="name"
+            label="Patient Name"
+            type="text"
+            fullWidth
+            variant="standard"
+            value={patientData.name}
+            onChange={InputHandler}
+          />
+                {/* <motion.div
                   initial={{ y: -100 }}
                   animate={{ y: [50, 0] }}
                   transition={{ duration: '1' }}
@@ -188,10 +91,54 @@ const Signin = () => {
                     id="patientid"
                     value={patientData.patientid}
                     onChange={InputHandler}
-                    required
+                    
                   />
-                </motion.div>
-                <motion.div
+                </motion.div> */}
+
+                <TextField
+            autoFocus
+            required
+            margin="dense"
+            id="name"
+            name="patientid"
+            label="Patient Id"
+            type="text"
+            fullWidth
+            variant="standard"
+            value={patientData.patientid}
+            onChange={InputHandler}
+          />
+                {/* <motion.div
+                  initial={{ y: -100 }}
+                  animate={{ y: [50, 0] }}
+                  transition={{ duration: '1' }}
+                  whileInView="visible"
+                  className={StyleSignin.formgroup}
+                >
+                  <label htmlFor="username">Email</label>
+                  <input
+                    name="email"
+                    type="email"
+                    id="email"
+                    value={patientData.email}
+                    onChange={InputHandler}
+                    
+                  />
+                </motion.div> */}
+
+                <TextField
+            autoFocus
+            required
+            margin="dense"
+            id="name"
+            name="email"
+            label="Email Address"
+            type="email"
+            variant="standard"
+            value={patientData.email}
+            onChange={InputHandler}
+          />
+                {/* <motion.div
                   initial={{ y: -100 }}
                   animate={{ y: [50, 0] }}
                   transition={{ duration: '1' }}
@@ -205,28 +152,49 @@ const Signin = () => {
                     id="password"
                     value={patientData.password}
                     onChange={InputHandler}
-                    required
+                    
                   />
                   
-                </motion.div>
-                <motion.div
-                  initial={{ x: 0 }}
-                  animate={{ x: [0, 100] }}
-                  transition={{ duration: '1' }}
-                  whileInView="visible"
-                  className={StyleSignin.button}
-                >
+                </motion.div> */}
+
+<TextField
+            autoFocus
+            required
+            margin="dense"
+            id="name"
+            name="password"
+            label="Password"
+            type="password"
+            fullWidth
+            variant="standard"
+            value={patientData.password}
+            onChange={InputHandler}
+          />
+          <div style={{display: 'flex' , justifyContent: 'space-between' , gap: '5rem'}}>
+          
+                <div className={StyleSignin.button} >
+                  <Link to='/'>
+                  <Button variant="outlined" type="submit">
+                    Back to Home
+                  </Button>
+                  </Link>
+                  
+                </div>
+                <div className={StyleSignin.button} >
                   <Button variant="contained" type="submit">
                     Sign in
                   </Button>
-                </motion.div>
+                </div>
+
+          </div>
+                
               </form>
             </div>
             <div className={StyleSignin.img}>
               <img
                 src={SigninImg}
                 alt="signinimg"
-                style={{ height: '17rem', width: '20rem' }}
+                style={{ height: '28rem', width: '27rem' }}
               ></img>
             </div>
           </div>
