@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import StyleSignin from './signin.module.css';
 import SigninImg from '../../Ui/signin.jpg';
-import PatientDash from './patientdash';
+import PatientDash from '../Patients/patientdash';
 import { TextField }from '@mui/material';
 import { Link } from 'react-router-dom';
 
@@ -187,6 +187,14 @@ const Signin = () => {
                 </div>
 
           </div>
+          <Link to='/admin/*/dashboard'>
+          <div className={StyleSignin.button} >
+                  <Button variant="contained" type="submit" fullWidth>
+                    Sign in As Admin
+                  </Button>
+                </div>
+          </Link>
+          
                 
               </form>
             </div>

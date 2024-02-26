@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import logo from '../../Ui/logo.png'
-import StyleNav from '../Navbar/navbar.module.css'
+import StyleNav from '../../Navbar/navbar.module.css'
 import { Link } from 'react-router-dom'
 import { Button } from '@mui/material'
 
