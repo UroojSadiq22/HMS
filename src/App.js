@@ -22,12 +22,18 @@ function App() {
 
   // Define an array of paths where the Navbar should be hidden
   const hiddenPaths = ['/signin' , '/admin/*/dashboard' , '/admin/*/doctors' , '/admin/*/patients' , '/admin/*/appointments'];
-  const hiddenAdminPaths = ['/signin' , '/' , '/about' , '/departments' , '/contact' , '/blogs' , '/doctors' , '/doctor/:id'];
+  const hiddenAdminPaths = ['/signin' , '/' , '/about' , '/departments' , '/contact' , '/blogs' , '/doctors' , /^\/doctor\/\d+$/];
   const hiddenFooter = ['/signin' , '/admin/*/dashboard' , '/admin/*/doctors' , '/admin/*/patients' , '/admin/*/appointments'];
 
   // Check if the current path is in the hiddenPaths array
   const hideNavbar = hiddenPaths.includes(location.pathname);
-  const hideAdminNavbar = hiddenAdminPaths.includes(location.pathname);
+  const hideAdminNavbar = hiddenAdminPaths.some(path => {
+    if (typeof path === 'string') {
+      return path === location.pathname;
+    } else if (path instanceof RegExp) {
+      return path.test(location.pathname);
+    }
+  });
   const hideFooter = hiddenFooter.includes(location.pathname);
 
   return (
@@ -35,9 +41,7 @@ function App() {
    {!hideAdminNavbar && <AdminNavbar/>}
     {!hideNavbar && <Navbar /> } {/* Render Navbar except for paths in hiddenPaths array */}
     <Routes>
- 
-    
-    
+
       <Route path='/' element={<Home/>}/>
       <Route path="/about" element={<About />} /> 
       <Route path="/departments" element={<Departments />} />

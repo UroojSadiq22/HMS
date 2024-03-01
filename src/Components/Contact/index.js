@@ -29,6 +29,20 @@ const submitHandler = (e) => {
     e.preventDefault();
     setSignedIn(true);
   };
+  const fadeInAnimationVariants = {
+    initial: {
+      opacity: 0 ,
+      y: 100 ,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.05,
+        duration: 2,
+      }
+    }
+  };
     
 return (
 <>
@@ -36,10 +50,10 @@ return (
 
 <div className={Stylecontact.contactcontainer}>
   <motion.h2
-  initial={{ y: -100 }}
-  animate={{ y: [50, 0] }}
-  transition={{ duration: '1' }}
-  whileInView="visible"
+  variants={fadeInAnimationVariants}
+  initial= 'initial'
+  whileInView='animate'
+  viewport={{once: true}}
   > 
   Get In Touch
   </motion.h2>

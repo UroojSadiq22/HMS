@@ -32,7 +32,20 @@ const Blogs = () => {
       visible: { scale: 1 },
       hidden: { scale: 0 },
     };
-
+    const fadeInAnimationVariants = {
+      initial: {
+        opacity: 0 ,
+        y: 100 ,
+      },
+      animate: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          delay: 0.05,
+          duration: 2,
+        }
+      }
+    };
   
 
   return (
@@ -43,10 +56,10 @@ const Blogs = () => {
 
     <motion.div className={Stylecontent.toptext}
     
-    initial={{y: -100}}
-    animate={{y: [200,0]}}
-    transition={{duration:'1', delay:'1'}}
-    whileInView="visible" >
+    variants={fadeInAnimationVariants}
+  initial= 'initial'
+  whileInView='animate'
+  viewport={{once: true}} >
       <h1>Meet Our Doctors Team</h1>
       <h3>To Find Best Doctors</h3>
       <p>Great doctor if you need your family member to get immediate assistance, emergency treatment or a simple consultation.</p>
